@@ -128,6 +128,56 @@
       color: #7f8c8d;
       font-size: 0.95em;
     }
+    .consultation-form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .consultation-form input,
+    .consultation-form select {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1em;
+      transition: border-color 0.3s ease;
+    }
+    .consultation-form input:focus,
+    .consultation-form select:focus {
+      border-color: #e74c3c;
+      outline: none;
+    }
+    .consultation-form button {
+      padding: 12px;
+      background: #e74c3c;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .consultation-form button:hover {
+      background: #c0392b;
+    }
+    .social-media {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .social-media a {
+      display: inline-block;
+      background: linear-gradient(145deg, #e74c3c, #c0392b);
+      color: #fff;
+      padding: 15px;
+      border-radius: 50%;
+      margin: 0 10px;
+      transition: transform 0.3s ease;
+      text-decoration: none;
+    }
+    .social-media a:hover {
+      transform: scale(1.2);
+    }
     footer {
       background: #111;
       color: #fff;
@@ -179,8 +229,8 @@
   <!-- Header -->
   <header>
     <img src="astromalogo.jpg" alt="Astroma Logo">
-    <h1></h1>
-    <p></p>
+    <h1>Astroma</h1>
+    <p>Guiding Stars, Empowering You</p>
   </header>
 
   <!-- Developing Notice -->
@@ -211,7 +261,7 @@
         <p>Magnetic wellness products for natural healing and vitality.</p>
       </div>
       <div class="product-card">
-        <i class="fas fa-stone"></i> <!-- Icon for Pyrite Stone -->
+        <i class="fas fa-star"></i> <!-- Updated Icon for Pyrite Stone -->
         <h3>Pyrite Stone</h3>
         <p>Gleaming pyrite stones for prosperity and spiritual strength.</p>
       </div>
@@ -223,13 +273,39 @@
     </div>
   </section>
 
+  <!-- Consultation Section -->
+  <section>
+    <h2>Book a Consultation</h2>
+    <p style="text-align: center; color: #34495e;">
+      Consult our experts for personalized guidance on Vastu, Relationships, Money Blockages, or other concerns.
+    </p>
+    <form class="consultation-form">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Mobile Number" required>
+      <select required>
+        <option value="" disabled selected>Select Service</option>
+        <option value="vastu">Vastu Consultation</option>
+        <option value="relationship">Relationship Guidance</option>
+        <option value="money">Money Blockage Solutions</option>
+        <option value="other">Other</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
   <!-- Contact -->
   <section>
     <h2>Contact Us</h2>
     <p style="text-align:center;">
-      📍 Address: Mumbai<br>
+      📍 Address: F-125, First Floor, Raghuleela Mega Mall, Poisar Gymkhana Road, Kandivali West, Mumbai - 400067<br>
       📧 Email: <a href="mailto:astroma.business@gmail.com" style="color:#e74c3c;">astroma.business@gmail.com</a><br>
     </p>
+    <div class="social-media">
+      <a href="https://www.instagram.com/astroma.in?igsh=MWEyMWxybjNtOTd2MQ==" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
   </section>
 
   <!-- Footer -->
