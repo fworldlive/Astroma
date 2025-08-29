@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Astroma - Gems & Spiritual Wellness</title>
+  <!-- Font Awesome CDN for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -108,16 +110,14 @@
       transform: scale(1.05);
       box-shadow: 0 12px 24px rgba(0,0,0,0.2);
     }
-    .product-card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
+    .product-card i {
+      font-size: 3em;
+      color: #e74c3c;
       margin-bottom: 15px;
-      transition: opacity 0.3s ease;
+      transition: transform 0.3s ease;
     }
-    .product-card img:hover {
-      opacity: 0.8;
+    .product-card:hover i {
+      transform: rotate(10deg);
     }
     .product-card h3 {
       margin: 15px 0;
@@ -178,7 +178,7 @@
 
   <!-- Header -->
   <header>
-    <img src="https://via.placeholder.com/150x80?text=Astroma+Logo" alt="Astroma Logo">
+    <img src="astromalogo.jpg" alt="Astroma Logo">
     <h1>ASTROMA</h1>
     <p>Guiding Stars, Empowering You</p>
   </header>
@@ -201,22 +201,22 @@
     <h2>Our Product Categories</h2>
     <div class="products">
       <div class="product-card">
-        <img src="https://via.placeholder.com/250x150?text=Bracelets" alt="Bracelets">
+        <i class="fas fa-gem"></i> <!-- Icon for Bracelets -->
         <h3>Bracelets</h3>
         <p>Handcrafted energy bracelets radiating balance and positivity.</p>
       </div>
       <div class="product-card">
-        <img src="https://via.placeholder.com/250x150?text=Magnets" alt="Magnets">
-        <h3>Money Magnets</h3>
+        <i class="fas fa-magnet"></i> <!-- Icon for Money Magnet/Magnets -->
+        <h3>Money Magnet</h3>
         <p>Magnetic wellness products for natural healing and vitality.</p>
       </div>
       <div class="product-card">
-        <img src="https://via.placeholder.com/250x150?text=Pyrite+Stone" alt="Pyrite Stone">
+        <i class="fas fa-stone"></i> <!-- Icon for Pyrite Stone -->
         <h3>Pyrite Stone</h3>
         <p>Gleaming pyrite stones for prosperity and spiritual strength.</p>
       </div>
       <div class="product-card">
-        <img src="https://via.placeholder.com/250x150?text=Rudraksha" alt="Rudraksha">
+        <i class="fas fa-pray"></i> <!-- Icon for Rudraksha -->
         <h3>Rudraksha</h3>
         <p>Authentic Rudraksha beads for spiritual growth and protection.</p>
       </div>
