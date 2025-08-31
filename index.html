@@ -4,241 +4,247 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Astroma - Guiding Stars, Empowering You</title>
-  <!-- Font Awesome CDN for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      line-height: 1.6;
+      background: #f9f9f9;
       color: #333;
-      background: linear-gradient(135deg, #1a1a2e, #16213e);
-      overflow-x: hidden;
     }
+
+    /* HEADER */
     header {
-      background: linear-gradient(90deg, #000, #2c3e50);
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      animation: fadeIn 2s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     header img {
-      height: 80px;
-      transition: transform 0.3s ease;
+      height: 40px;
     }
-    header img:hover {
-      transform: scale(1.1);
+    .header-icons i {
+      margin-left: 18px;
+      font-size: 1.2em;
+      color: #333;
+      cursor: pointer;
     }
-    header h1 {
-      margin: 10px 0;
-      font-size: 2.5em;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(180deg, #6a11cb, #2575fc);
+      text-align: center;
+      padding: 60px 20px;
+      color: #fff;
     }
-    header p {
-      font-style: italic;
+    .hero h1 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1em;
+      margin-bottom: 30px;
       opacity: 0.9;
     }
-    .notice {
-      background: #ffeb3b;
-      padding: 15px;
-      text-align: center;
+    .hero .btns {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    .btn {
+      padding: 14px;
+      border-radius: 8px;
+      text-decoration: none;
       font-weight: bold;
-      color: #333;
-      border-radius: 5px;
-      margin: 10px auto;
-      width: 90%;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      animation: bounce 1.5s infinite;
-    }
-    section {
-      padding: 50px 20px;
-      max-width: 1100px;
-      margin: auto;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 15px;
-      margin-bottom: 30px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    section:hover {
-      transform: translateY(-5px);
-    }
-    h2 {
+      font-size: 1em;
       text-align: center;
-      margin-bottom: 30px;
-      color: #2c3e50;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      display: block;
+      transition: 0.3s;
+    }
+    .btn-orange {
+      background: linear-gradient(90deg, #f39c12, #e67e22);
+      color: #fff;
+    }
+    .btn-orange:hover {
+      background: #d35400;
+    }
+    .btn-white {
+      background: #fff;
+      color: #6a11cb;
+      border: 1px solid #ddd;
+    }
+    .btn-white:hover {
+      background: #f5f5f5;
+    }
+    .btn-green {
+      background: #27ae60;
+      color: #fff;
+    }
+    .btn-green:hover {
+      background: #1e8449;
+    }
+
+    /* SECTIONS */
+    section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    section h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 1.5em;
       position: relative;
     }
-    h2::after {
+    section h2::after {
       content: '';
       width: 50px;
       height: 3px;
-      background: #e74c3c;
+      background: #6a11cb;
       position: absolute;
-      bottom: -10px;
+      bottom: -8px;
       left: 50%;
       transform: translateX(-50%);
     }
-    .about {
-      text-align: center;
-      color: #34495e;
-    }
     .about p {
-      font-size: 1.1em;
+      text-align: center;
       max-width: 800px;
-      margin: 20px auto;
+      margin: 0 auto;
+      color: #555;
     }
+
+    /* PRODUCTS */
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      padding: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
     }
     .product-card {
-      background: linear-gradient(145deg, #fff, #f0f0f0);
-      border-radius: 15px;
-      padding: 25px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
       text-align: center;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-      transition: all 0.4s ease;
-      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
     }
     .product-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+      transform: translateY(-5px);
     }
     .product-card i {
-      font-size: 3em;
-      color: #e74c3c;
-      margin-bottom: 15px;
-      transition: transform 0.3s ease;
-    }
-    .product-card:hover i {
-      transform: rotate(10deg);
+      font-size: 2.5em;
+      color: #6a11cb;
+      margin-bottom: 12px;
     }
     .product-card h3 {
-      margin: 15px 0;
-      color: #e74c3c;
-      font-size: 1.5em;
+      margin: 10px 0;
+      color: #6a11cb;
     }
     .product-card p {
-      color: #7f8c8d;
-      font-size: 0.95em;
+      color: #777;
+      font-size: 0.9em;
     }
+
+    /* CONSULTATION FORM */
     .consultation-form {
       max-width: 600px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 12px;
     }
-    .consultation-form input,
+    .consultation-form input, 
     .consultation-form select {
       padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
       font-size: 1em;
-      transition: border-color 0.3s ease;
-    }
-    .consultation-form input:focus,
-    .consultation-form select:focus {
-      border-color: #e74c3c;
-      outline: none;
     }
     .consultation-form button {
-      padding: 12px;
-      background: #e74c3c;
+      padding: 14px;
+      background: #6a11cb;
       color: #fff;
       border: none;
-      border-radius: 5px;
-      font-size: 1.1em;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      font-size: 1em;
     }
     .consultation-form button:hover {
-      background: #c0392b;
+      background: #4e0f9e;
+    }
+
+    /* CONTACT */
+    .contact p {
+      text-align: center;
+      color: #555;
+      line-height: 1.6;
     }
     .social-media {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 15px;
     }
     .social-media a {
-      display: inline-block;
-      background: linear-gradient(145deg, #e74c3c, #c0392b);
       color: #fff;
-      padding: 15px;
+      background: linear-gradient(45deg, #6a11cb, #2575fc);
+      padding: 12px;
       border-radius: 50%;
-      margin: 0 10px;
-      transition: transform 0.3s ease;
-      text-decoration: none;
+      margin: 0 8px;
+      font-size: 1.2em;
+      transition: 0.3s;
     }
     .social-media a:hover {
       transform: scale(1.2);
     }
+
+    /* FOOTER */
     footer {
       background: #111;
-      color: #fff;
+      color: #ccc;
       text-align: center;
-      padding: 20px;
+      padding: 18px;
       margin-top: 40px;
-      position: relative;
-      overflow: hidden;
-    }
-    footer::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(231,76,60,0.1) 0%, rgba(0,0,0,0) 70%);
-      animation: rotate 10s linear infinite;
-    }
-    footer p {
-      position: relative;
-      z-index: 1;
+      font-size: 0.9em;
     }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    @keyframes rotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
-      .products { grid-template-columns: 1fr; }
-      header img { height: 50px; }
-      h2 { font-size: 1.5em; }
+      .hero h1 { font-size: 1.4em; }
+      .hero p { font-size: 0.9em; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header>
     <img src="astromalogo.jpg" alt="Astroma Logo">
-    <h1></h1>
-    <p></p>
+    <div class="header-icons">
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-shopping-cart"></i>
+      <i class="fas fa-user"></i>
+    </div>
   </header>
 
-  <!-- Developing Notice -->
-  <div class="notice">
-    🚧 In Developing Mode – We are going live soon without products 🚀
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Your Trusted Astro & Vastu Store</h1>
+    <p>Consult, Shop & Prosper<br>Connect with expert astrologers and discover powerful spiritual products for a blessed life</p>
+    <div class="btns">
+      <!-- Order changed as per your request -->
+      <a href="#consultation" class="btn btn-orange">Consultation Now</a>
+      <a href="#products" class="btn btn-white">Shop Now</a>
+      <a href="https://wa.me/918956176195" class="btn btn-green" target="_blank">WhatsApp Chat</a>
+    </div>
   </div>
 
-  <!-- About -->
+  <!-- ABOUT -->
   <section class="about">
     <h2>About Astroma</h2>
     <p>
@@ -246,39 +252,36 @@
     </p>
   </section>
 
-  <!-- Products -->
-  <section>
+  <!-- PRODUCTS -->
+  <section id="products">
     <h2>Our Product Categories</h2>
     <div class="products">
       <div class="product-card">
-        <i class="fas fa-gem"></i> <!-- Icon for Bracelets -->
+        <i class="fas fa-gem"></i>
         <h3>Bracelets</h3>
         <p>Handcrafted energy bracelets radiating balance and positivity.</p>
       </div>
       <div class="product-card">
-        <i class="fas fa-magnet"></i> <!-- Icon for Money Magnet/Magnets -->
+        <i class="fas fa-magnet"></i>
         <h3>Money Magnet</h3>
         <p>Magnetic wellness products for natural healing and vitality.</p>
       </div>
       <div class="product-card">
-        <i class="fas fa-star"></i> <!-- Updated Icon for Pyrite Stone -->
+        <i class="fas fa-star"></i>
         <h3>Pyrite Stone</h3>
         <p>Gleaming pyrite stones for prosperity and spiritual strength.</p>
       </div>
       <div class="product-card">
-        <i class="fas fa-pray"></i> <!-- Icon for Rudraksha -->
+        <i class="fas fa-pray"></i>
         <h3>Rudraksha</h3>
         <p>Authentic Rudraksha beads for spiritual growth and protection.</p>
       </div>
     </div>
   </section>
 
-  <!-- Consultation Section -->
-  <section>
+  <!-- CONSULTATION -->
+  <section id="consultation">
     <h2>Book a Consultation</h2>
-    <p style="text-align: center; color: #34495e;">
-      Consult our experts for personalized guidance on Vastu, Relationships, Money Blockages, or other concerns.
-    </p>
     <form class="consultation-form">
       <input type="text" placeholder="Full Name" required>
       <input type="email" placeholder="Email Address" required>
@@ -294,12 +297,12 @@
     </form>
   </section>
 
-  <!-- Contact -->
-  <section>
+  <!-- CONTACT -->
+  <section class="contact">
     <h2>Contact Us</h2>
-    <p style="text-align:center;">
+    <p>
       📍 Address: F-125, First Floor, Raghuleela Mega Mall, Poisar Gymkhana Road, Kandivali West, Mumbai - 400067<br>
-      📧 Email: <a href="mailto:astroma.business@gmail.com" style="color:#e74c3c;">astroma.business@gmail.com</a><br>
+      📧 Email: <a href="mailto:astroma.business@gmail.com" style="color:#6a11cb;">astroma.business@gmail.com</a>
     </p>
     <div class="social-media">
       <a href="https://www.instagram.com/astroma.in?igsh=MWEyMWxybjNtOTd2MQ==" target="_blank">
@@ -308,7 +311,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Astroma. All Rights Reserved.</p>
   </footer>
